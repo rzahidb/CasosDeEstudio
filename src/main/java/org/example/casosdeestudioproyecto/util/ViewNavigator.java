@@ -13,10 +13,10 @@ import java.util.function.Consumer;
 
 public class ViewNavigator {
 
-    public static final String VISTA_MENU = "/org/example/concurrenciaproyecto/views/menu-view.fxml";
-    public static final String VISTA_RESERVAS = "/org/example/concurrenciaproyecto/views/reservas-view.fxml";
-    public static final String VISTA_PEDIDOS = "/org/example/concurrenciaproyecto/views/pedidos-view.fxml";
-    public static final String VISTA_CAJA = "/org/example/concurrenciaproyecto/views/caja-view.fxml";
+    public static final String VISTA_MENU = "/org/example/casosdeestudioproyecto/views/menu-view.fxml";
+    public static final String VISTA_RESERVAS = "/org/example/casosdeestudioproyecto/views/reservas-view.fxml";
+    public static final String VISTA_PEDIDOS = "/org/example/casosdeestudioproyecto/views/pedidos-view.fxml";
+    public static final String VISTA_CAJA = "/org/example/casosdeestudioproyecto/views/caja-view.fxml";
 
     private static Stage stagePrincipal;
     private static Consumer<Runnable> manejadorDetencionActiva;
@@ -59,8 +59,9 @@ public class ViewNavigator {
         manejadorDetencionActiva = null;
     }
 
+
     public static void cargarMenuPrincipal() {
-        cambiarVista(VISTA_MENU, "Menú Principal - Proyecto de Concurrencia");
+        cargarVista(VISTA_MENU, "Menú Principal - Proyecto de Concurrencia");
     }
 
     public static void cargarVista(String rutaFxml, String tituloVentana) {

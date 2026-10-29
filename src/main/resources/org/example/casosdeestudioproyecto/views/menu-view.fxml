@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefWidth="900.0" prefHeight="660.0"
+            style="-fx-background-color: #F4F6F9;"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.casosdeestudioproyecto.controllers.MenuController">
+
+    <center>
+        <VBox alignment="CENTER"
+              maxWidth="580.0"
+              spacing="18.0"
+              style="-fx-background-color: white;
+                     -fx-border-color: #D0D7DE;
+                     -fx-border-radius: 8;
+                     -fx-background-radius: 8;">
+
+            <BorderPane.margin>
+                <Insets top="35" bottom="35"
+                        left="60" right="60"/>
+            </BorderPane.margin>
+
+            <padding>
+                <Insets top="35" bottom="35"
+                        left="45" right="45"/>
+            </padding>
+
+            <!-- UNIVERSIDAD -->
+            <Label text="UNIVERSIDAD AMERICANA (UAM)"
+                   alignment="CENTER"
+                   textAlignment="CENTER"
+                   style="-fx-font-size: 15px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #1F4E79;"/>
+
+            <!-- TITULO PRINCIPAL CENTRADO -->
+            <Label text="PROGRAMACIÓN DE APLICACIONES&#10;DE ESCRITORIO"
+                   alignment="CENTER"
+                   textAlignment="CENTER"
+                   wrapText="true"
+                   maxWidth="490.0"
+                   style="-fx-font-size: 20px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #111827;"/>
+
+            <!-- NOMBRE DEL PROYECTO -->
+            <Label text="PROYECTO DE CONCURRENCIA"
+                   alignment="CENTER"
+                   textAlignment="CENTER"
+                   style="-fx-font-size: 18px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #2563EB;"/>
+
+            <!-- Oculto para mantener compatibilidad con MenuController -->
+            <Label fx:id="lblSubtitulo"
+                   visible="false"
+                   managed="false"/>
+
+            <Separator prefWidth="460"/>
+
+            <!-- CASO 1 -->
+            <Button fx:id="btnCaso1"
+                    onAction="#abrirCaso1Reservas"
+                    mnemonicParsing="false"
+                    prefWidth="380"
+                    prefHeight="48"
+                    text="CASO 1 - RESERVAS"
+                    style="-fx-background-color: #1E40AF;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;
+                           -fx-font-size: 14px;"/>
+
+            <!-- CASO 2 -->
+            <Button fx:id="btnCaso2"
+                    onAction="#abrirCaso2Pedidos"
+                    mnemonicParsing="false"
+                    prefWidth="380"
+                    prefHeight="48"
+                    text="CASO 2 - PEDIDOS"
+                    style="-fx-background-color: #0F766E;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;
+                           -fx-font-size: 14px;"/>
+
+            <!-- CASO 3 -->
+            <Button fx:id="btnCaso3"
+                    onAction="#abrirCaso3Caja"
+                    mnemonicParsing="false"
+                    prefWidth="380"
+                    prefHeight="48"
+                    text="CASO 3 - CAJA DE VENTAS"
+                    style="-fx-background-color: #4338CA;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;
+                           -fx-font-size: 14px;"/>
+
+            <Separator prefWidth="460"/>
+
+            <!-- SALIR -->
+            <Button fx:id="btnSalir"
+                    onAction="#salirAplicacion"
+                    mnemonicParsing="false"
+                    prefWidth="220"
+                    prefHeight="42"
+                    text="SALIR"
+                    style="-fx-background-color: #B91C1C;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;"/>
+
+            <!-- ESTADO DEL SISTEMA -->
+            <Label fx:id="lblEstadoMenu"
+                   text="Estado del sistema: Listo"
+                   alignment="CENTER"
+                   textAlignment="CENTER"
+                   wrapText="true"
+                   style="-fx-font-size: 12px;
+                          -fx-text-fill: #6B7280;"/>
+
+        </VBox>
+    </center>
+</BorderPane>

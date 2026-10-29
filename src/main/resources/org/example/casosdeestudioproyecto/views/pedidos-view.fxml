@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefWidth="900" prefHeight="660" style="-fx-background-color: #F4F6F9;"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.casosdeestudioproyecto.controllers.PedidosController">
+    <top>
+        <VBox spacing="6" style="-fx-background-color: #0F766E;">
+            <padding><Insets top="14" bottom="14" left="24" right="24"/></padding>
+            <Label text="CASO 2 — PROCESAMIENTO DE PEDIDOS CON CANCELACIÓN"
+                   style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Label text="1 trabajador (ProcesadorPedidos) | 30 pedidos secuenciales (200 ms por pedido) | interrupt()"
+                   style="-fx-text-fill: #CCFBF1; -fx-font-size: 12px;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="12">
+            <padding><Insets top="16" bottom="16" left="24" right="24"/></padding>
+            <GridPane hgap="24" vgap="10" style="-fx-background-color: white; -fx-border-color: #CBD5E1; -fx-background-radius: 6;">
+                <padding><Insets top="14" bottom="14" left="18" right="18"/></padding>
+                <Label text="Estado actual:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold;"/>
+                <Label fx:id="lblEstado" text="Listo" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-text-fill: #0F766E; -fx-font-weight: bold;"/>
+                <Label text="Pedidos completados:" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-weight: bold;"/>
+                <Label fx:id="lblContadorPedidos" text="0 / 30" GridPane.columnIndex="3" GridPane.rowIndex="0" style="-fx-font-weight: bold;"/>
+                <Label text="Porcentaje de avance:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold;"/>
+                <Label fx:id="lblPorcentaje" text="0 %" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-text-fill: #1D4ED8; -fx-font-weight: bold;"/>
+            </GridPane>
+            <VBox spacing="6" style="-fx-background-color: white; -fx-border-color: #CBD5E1; -fx-background-radius: 6;">
+                <padding><Insets top="12" bottom="12" left="18" right="18"/></padding>
+                <Label text="Barra de progreso de pedidos confirmados:" style="-fx-font-weight: bold;"/>
+                <ProgressBar fx:id="barraProgreso" maxWidth="1.7976931348623157E308" prefHeight="22" progress="0"/>
+            </VBox>
+            <Label text="Registro de operaciones:" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="txtRegistro" editable="false" prefHeight="280" VBox.vgrow="ALWAYS"
+                      style="-fx-font-family: 'Consolas', 'Monospaced'; -fx-font-size: 12px;"/>
+            <Separator/>
+            <HBox alignment="CENTER_LEFT" spacing="14">
+                <Button fx:id="btnIniciar" text="Iniciar" onAction="#iniciarProcesamiento"
+                        mnemonicParsing="false" prefWidth="150" prefHeight="38"
+                        style="-fx-background-color: #0F766E; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button fx:id="btnCancelar" text="Cancelar" onAction="#cancelarProcesamiento"
+                        disable="true" mnemonicParsing="false" prefWidth="150" prefHeight="38"
+                        style="-fx-background-color: #B91C1C; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button fx:id="btnLimpiar" text="Restablecer Campos" onAction="#accionLimpiarCampos"
+                        mnemonicParsing="false" prefWidth="170" prefHeight="38"
+                        style="-fx-background-color: #475569; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnVolverMenu" text="Volver al menú" onAction="#volverAlMenu"
+                        mnemonicParsing="false" prefWidth="170" prefHeight="38"
+                        style="-fx-background-color: #334155; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
